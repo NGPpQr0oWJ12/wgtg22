@@ -23,10 +23,8 @@ ADMIN_IDS="ID1,ID2,ID3"
 Если вы загрузили этот проект на GitHub, то для развертывания бота на абсолютно пустом сервере Linux достаточно ввести всего **одну команду**:
 
 ```bash
-git clone https://github.com/ВАШ_GITHUB/wgtg22.git && cd wgtg22 && bash deploy/setup.sh
+git clone https://github.com/NGPpQr0oWJ12/wgtg22.git && cd wgtg22 && bash deploy/setup.sh
 ```
-
-*(Не забудьте заменить `ВАШ_GITHUB/wgtg22` на вашу ссылку репозитория)*
 
 **Что делает эта команда?**
 1. Скачивает исходный код бота.
