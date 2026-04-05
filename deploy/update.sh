@@ -3,19 +3,22 @@
 # Stop on error
 set -e
 
-APP_DIR="/var/www/wgtg22"
+echo "🔄 Начинаем обновление WG-TG-Bot..."
 
-echo "🔄 Updating WG-TG-Bot..."
+# Сброс локальных изменений (забыли что-то поменять) и скачивание свежего кода с Github
+echo "📦 Загрузка нового кода с GitHub..."
+git reset --hard HEAD
+git pull
 
-echo "📦 Deploying new files..."
-# Copy all files from current directory to APP_DIR overwriting old ones
-cp -r . "$APP_DIR/"
+# Установка новых зависимостей (если появились)
+echo "📦 Обновление библиотек (npm install)..."
+npm install
 
-echo "📦 Updating dependencies..."
-cd "$APP_DIR"
-npm install --production
+# Перезапуск бота
+echo "♻️ Перезапуск приложения..."
+pm2 restart ecosystem.config.js
+pm2 save
 
-echo "♻️ Restarting Application..."
-pm2 restart wgtg22
-
-echo "✅ Update Complete!"
+echo ""
+echo "✅ Обновление успешно завершено!"
+echo "Для просмотра логов введите: pm2 logs wgtg22"
