@@ -1,0 +1,12 @@
+{
+    "watch": [
+        ".",
+        "services",
+        "bot"
+    ],
+    "ext": "js,json",
+    "ignore": [
+        ".env",
+        "node_modules"
+    ]
+}

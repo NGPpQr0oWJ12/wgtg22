@@ -1,0 +1,21 @@
+# Зависимости
+node_modules/
+
+# Секретные конфигурации и токены
+.env
+
+# Логи PM2 и NPM
+logs/
+*.log
+npm-debug.log*
+
+# Исключения ОС
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Старые скрипты и архивы деплоя
+release.zip
+*.zip
+*.tar
+wgtg_temp/
